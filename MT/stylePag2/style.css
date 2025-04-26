@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+  }
+  body {
+    background-color: #1e1e1e;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+
+  .page-wrapper {
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+  }
+  @keyframes slideIn {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #ff6c00;
+    
+    border: 2px solid #333;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+
+
+  header {
+    width: 100%;
+    height: 80px;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .left-header .logo img {
+    width: 60px;
+    height: auto;
+  }
+  .home-btn a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  .home-btn a:hover {
+    color: #fff;
+  }
+
+  
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .main-btn {
+    text-decoration: none;
+    color: #ffffff;
+    background: #ff6c00;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    position: relative;
+    right: 71px;
+    bottom: 43px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .main-btn:hover {
+    background: #ff6200;
+    transform: translateY(-55px);
+  }
+  
+  .login-form-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  .login-form-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6c00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  .login-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .login-form-container form input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    outline: none;
+    background-color: #222;
+    color: #fff;
+    transition: border-color 0.3s;
+  }
+  .login-form-container form input:focus {
+    border-color: #ff6c00;
+  }
+  .login-form-container form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background: #ff6c00;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .login-form-container form button:hover {
+    background: #e65a00;
+    transform: translateY(-3px);
+  }
+  .login-form-container p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  .login-form-container p a {
+    color: #ff6c00;
+    text-decoration: none;
+  }
+  .login-form-container p a:hover {
+    color: #fff;
+  }
+
+
+  .discord-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #7289DA;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 30px;
+  }
+  .discord-login-btn:hover {
+    background: #5b6eae;
+    transform: translateY(-3px);
+  }
+  .discord-login-btn img {
+    width: 26px;
+    height: 26px;
+  }
+
+
+  #loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #020225;
+    z-index: 10000;
+    display: none;
+    transition: all 0.5s ease;
+  }
+
+
+  @media (max-width: 576px) {
+    header {
+      padding: 0 20px;
+    }
+    .login-form-container {
+      padding: 20px;
+    }
+  }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>دخول بالليسن كي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>تسجيل الدخول</h1>
+
+    <input type="text" id="username" placeholder="اسم الحساب (أي اسم)"><br>
+    <input type="text" id="license" placeholder="ليسن كي"><br>
+
+    <button onclick="login()">دخول</button>
+
+    <script>
+        // هنا تحط الليسن كي اللي انت مسويه
+        const validLicenses = [
+            "ABC123XYZ", 
+            "VIP2025LICENSE", 
+            "MYKEY-001"
+        ];
+
+        function login() {
+            var username = document.getElementById('username').value;
+            var license = document.getElementById('license').value;
+
+            if(username && license) {
+                if(validLicenses.includes(license)) {
+                    alert("تم تسجيل الدخول بنجاح!");
+                    window.location.href = "dashboard.html"; // غيرها إذا تبي
+                } else {
+                    alert("الليسن كي غير صحيح!");
+                }
+            } else {
+                alert("الرجاء تعبئة جميع الحقول!");
+            }
+        }
+    </script>
+
+</body>
+</html>
